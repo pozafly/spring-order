@@ -4,9 +4,10 @@ import hello.core.AppConfig;
 import hello.core.member.Grade;
 import hello.core.member.Member;
 import hello.core.member.MemberService;
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class OrderServiceTest {
 
@@ -27,7 +28,7 @@ public class OrderServiceTest {
 
         Order order = orderService.createOrder(1L, "itemA", 10000);
 
-        Assertions.assertThat(order.getDiscountPrice()).isEqualTo(1000);
-        Assertions.assertThat(order.calculatePrice()).isEqualTo(9000);
+        assertThat(order.getDiscountPrice()).isEqualTo(1000);
+        assertThat(order.calculatePrice()).isEqualTo(9000);
     }
 }
